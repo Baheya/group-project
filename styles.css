@@ -1,0 +1,14 @@
+html {
+    box-sizing: border-box;
+}
+.nav-link {
+    font-size: 12px;
+}
+.navbar p {
+    font-size: 12px;
+}
+.product p {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
