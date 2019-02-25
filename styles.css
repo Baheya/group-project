@@ -12,6 +12,9 @@ html {
     margin: 0;
     padding: 0;
 }
-.navbar-right {
-    display: inline;
+.fa-angrycreative {
+    font-size: 36px;
+}
+.navbar {
+    border: solid 1px #ddd;
 }
