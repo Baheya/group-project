@@ -18,3 +18,8 @@ html {
 .navbar {
     border: solid 1px #ddd;
 }
+img {
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+}
