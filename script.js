@@ -53,6 +53,51 @@ var album3 = {
     "picture_url": "https://dx72k0ec4onep.cloudfront.net/product/1616/28332732/8WQFMW-1478305742-1280x1280-602547394897.jpg"
 };
 
+$('#book-1 .name').text(book1.name);
+$('#book-1 .category').text(book1.category);
+$('#book-1 .price').text(book1.price);
+$('#book-1 img').attr('src', book1.picture_url);
+
+$('#book-2 .name').text(book2.name);
+$('#book-2 .category').text(book2.category);
+$('#book-2 .price').text(book2.price);
+$('#book-2 img').attr('src', book2.picture_url);
+
+$('#book-3 .name').text(book3.name);
+$('#book-3 .category').text(book3.category);
+$('#book-3 .price').text(book3.price);
+$('#book-3 img').attr('src', book3.picture_url);
+
+$('#movie-1 .name').text(movie1.name);
+$('#movie-1 .category').text(movie1.category);
+$('#movie-1 .price').text(movie1.price);
+$('#movie-1 img').attr('src', movie1.picture_url);
+
+$('#movie-2 .name').text(movie2.name);
+$('#movie-2 .category').text(movie2.category);
+$('#movie-2 .price').text(movie2.price);
+$('#movie-2 img').attr('src', movie2.picture_url);
+
+$('#movie-3 .name').text(movie3.name);
+$('#movie-3 .category').text(movie3.category);
+$('#movie-3 .price').text(movie3.price);
+$('#movie-3 img').attr('src', movie3.picture_url);
+
+$('#album-1 .name').text(album1.name);
+$('#album-1 .category').text(album1.category);
+$('#album-1 .price').text(album1.price);
+$('#album-1 img').attr('src', album1.picture_url);
+
+$('#album-2 .name').text(album2.name);
+$('#album-2 .category').text(album2.category);
+$('#album-2 .price').text(album2.price);
+$('#album-2 img').attr('src', album2.picture_url);
+
+$('#album-3 .name').text(album3.name);
+$('#album-3 .category').text(album3.category);
+$('#album-3 .price').text(album3.price);
+$('#album-3 img').attr('src', album3.picture_url);
+
 $("#userInput").on("keyup", function () {
     var searchInput = $(this).val().toLowerCase();
     $(".product .name").each(function () {
