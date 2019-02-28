@@ -134,7 +134,7 @@ function add_to_page(x) {
     // $('#book-1').append($('<div class=category></div>').text(x.category));
     // $('#book-1').append($('<div class=price></div>').text(x.price));
 };
-add_to_page(book1);
+// add_to_page(book1);
 
 
 
