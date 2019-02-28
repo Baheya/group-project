@@ -2,55 +2,64 @@ var book1 = {
     "name": "The Little Prince",
     "category": "Book",
     "price": 100,
-    "picture_url": "https://images-na.ssl-images-amazon.com/images/I/710H4c%2BmDeL.jpg"
+    "picture_url": "https://images-na.ssl-images-amazon.com/images/I/710H4c%2BmDeL.jpg",
+    "id": "book-1"
 };
 var book2 = {
     "name": "The City Always Wins",
     "category": "Book",
     "price": 250,
-    "picture_url": "https://www.easons.com/globalassets/5637150827/all/books/fiction/fiction-a-to-z/contemporary-fiction/9780571335176.jpg"
+    "picture_url": "https://www.easons.com/globalassets/5637150827/all/books/fiction/fiction-a-to-z/contemporary-fiction/9780571335176.jpg",
+    "id": "book-2"
 };
 var book3 = {
     "name": "The Map of Love",
     "category": "Book",
     "price": 100,
-    "picture_url": "https://images-na.ssl-images-amazon.com/images/I/710H4c%2BmDeL.jpg"
+    "picture_url": "https://images-na.ssl-images-amazon.com/images/I/71Zh1DdRD9L.jpg",
+    "id": "book-3"
 };
 var movie1 = {
     "name": "Brooklyn Nine-Nine",
     "category": "Movie",
     "price": 200,
-    "picture_url": "https://m.media-amazon.com/images/M/MV5BMGU3NGYyYTYtYjIzMS00ZmUwLTlmMjAtZDhhMzFiNWI0NzNkXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg"
+    "picture_url": "https://m.media-amazon.com/images/M/MV5BMGU3NGYyYTYtYjIzMS00ZmUwLTlmMjAtZDhhMzFiNWI0NzNkXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg",
+    "id": "movie-1"
 };
 var movie2 = {
     "name": "La Casa De Papel",
     "category": "Movie",
     "price": 150,
-    "picture_url": "https://i.ebayimg.com/images/i/163093272041-0-1/s-l1000.jpg"
+    "picture_url": "https://i.ebayimg.com/images/i/163093272041-0-1/s-l1000.jpg",
+    "id": "movie-2"
 };
 var movie3 = {
     "name": "The Good Place",
     "category": "Movie",
     "price": 200,
-    "picture_url": "https://images-na.ssl-images-amazon.com/images/I/91DHcyLCfaL._SL1500_.jpg"
+    "picture_url": "https://images-na.ssl-images-amazon.com/images/I/91DHcyLCfaL._SL1500_.jpg",
+    "id": "movie-3"
 };
 var album1 = {
     "name": "Don't Smile At Me",
     "category": "Album",
     "price": 300,
-    "picture_url": "https://cdn.shopify.com/s/files/1/2171/7009/products/dontsmile-vinyl_grande.png?v=1532122195"
+    "picture_url": "https://cdn.shopify.com/s/files/1/2171/7009/products/dontsmile-vinyl_grande.png?v=1532122195",
+    "id": "album-1"
 };
 var album2 = {
     "name": "Solstice",
     "category": "Album",
     "price": 250,
-    "picture_url": "https://sidekick-music.com/wp-content/uploads/2018/09/Down.jpg"
+    "picture_url": "https://sidekick-music.com/wp-content/uploads/2018/09/Down.jpg",
+    "id": "album-2"
 };
 var album3 = {
     "name": "Tame Impala",
     "category": "Album",
     "price": 100,
-    "picture_url": "https://dx72k0ec4onep.cloudfront.net/product/1616/28332732/8WQFMW-1478305742-1280x1280-602547394897.jpg"
+    "picture_url": "https://dx72k0ec4onep.cloudfront.net/product/1616/28332732/8WQFMW-1478305742-1280x1280-602547394897.jpg",
+    "id": "album-3"
 };
 
 $('#book-1 .name').text(book1.name);
@@ -104,16 +113,29 @@ $('#album-3 img').attr('src', album3.picture_url);
 for(var i=0; i < 3; i++) {
     var row = $("<div class='row pb-5'></div>");
     for(var j=0; j < 3; j++) {
-        row.append("<div class=col-sm></div>");
-        //to do: for each column append one object so all the products are placed in the grid with jquery
+        var column = $("<div class=col-sm></div>");
+        column.append($("<div class=product></div>"));
+        row.append(column);
+
+        //to do: for each column append one object so all the products are placed in the grid with jquery?
     }
     $("#content").append(row);
 }
 
-// code for adding one value from an object to HTML, not important right now
-// function add_to_page() {
-//     $('#content').append($('<div id=book-1>').html($('<div class=name>').text(book1.name)))
-// add_to_page(book1);
+//store all objects in an array
+var bookArray = [book1, book2, book3];
+var movieArray = [movie1, movie2, movie3];
+var albumArray = [album1, album2, album3];
+
+// code for adding object keys and values with their respective divs. So far I am only able to append the outermost div with a nested div (class=picture, with img tag nested inside the div) inside it. 
+function add_to_page(x) {
+    $('#content').append($("<div id=" + x.id + " class=" + x.category + ">").html($('<div class=picture>').html($('<img />').attr('src', x.picture_url))));
+    // $('#content').append($('<div class=name></div>').text(x.name));
+    // $('#book-1').append($('<div class=category></div>').text(x.category));
+    // $('#book-1').append($('<div class=price></div>').text(x.price));
+};
+add_to_page(book1);
+
 
 
 //code for search:
