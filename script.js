@@ -70,30 +70,56 @@ var products = {
 ]
 };
 
-$('#inlineFormCustomSelect').on('change', function (event) {
-    event.preventDefault();
-    var userSelectOption = event.target.value;
-    if (userSelectOption === "categ") {
+//product filtering from navbar dropdown menu item
+$('.dropdown-item').on('click', function (x) {
+    if (x.target.innerHTML === "All Products") {
         $(".books").show();
         $(".movies").show();
         $(".albums").show();
     }
-    if (userSelectOption === "books") {
+    if (x.target.innerHTML === "Books") {
         $(".books").show();
         $(".movies").hide();
         $(".albums").hide();
     }
-    if (userSelectOption === "movies") {
+    if (x.target.innerHTML === "Movies") {
         $(".movies").show();
         $(".books").hide();
         $(".albums").hide();
     }
-    if (userSelectOption === "albums") {
+    if (x.target.innerHTML === "Albums") {
         $(".albums").show();
         $(".movies").hide();
         $(".books").hide();
     }
 });
+
+//for filtering with the select option, uncomment the form in index.html and uncomment the code below. It is working but looks ugly, thought it would be more user-friendly to incorporate filtering through the menu.
+
+// $('#inlineFormCustomSelect').on('change', function (event) {
+//     event.preventDefault();
+//     var userSelectOption = event.target.value;
+//     if (userSelectOption === "categ") {
+//         $(".books").show();
+//         $(".movies").show();
+//         $(".albums").show();
+//     }
+//     if (userSelectOption === "books") {
+//         $(".books").show();
+//         $(".movies").hide();
+//         $(".albums").hide();
+//     }
+//     if (userSelectOption === "movies") {
+//         $(".movies").show();
+//         $(".books").hide();
+//         $(".albums").hide();
+//     }
+//     if (userSelectOption === "albums") {
+//         $(".albums").show();
+//         $(".movies").hide();
+//         $(".books").hide();
+//     }
+// });
 
 //adding products to the page
 $(window).on('load', function () {
@@ -101,10 +127,10 @@ $(window).on('load', function () {
 });
 function addToPage() {
     // document.querySelector("#cart .price").innerHTML = localStorage.getItem("price");
-    for (var keys in products) {
-        var appendToDropDown = '<option class="capitalize" value="' + keys + '">' + keys + '</option>';
-        $("#inlineFormCustomSelect").append(appendToDropDown);
-    }
+    // for (var keys in products) {
+    //     var appendToDropDown = '<a  href="" class="dropdown-item ' + keys + '">' + keys + '</a>';
+    //     $(".dropdown-menu").append(appendToDropDown);
+    // }
     var arr = Object.entries(products);
     for (var j = 0; j < Object.keys(products).length; j++) {
         for (var i = 0; i < Object.entries(products)[j][1].length; i++) {
@@ -173,7 +199,6 @@ function addToDetails() {
 $("#addtocart").on('click', function (event) {
     event.preventDefault();
     var itemPrice = document.querySelector('#details .price').innerHTML;
-    console.log(itemPrice);
     var itemName = document.querySelector('#details .product-name').innerHTML;
     localStorage.setItem('price', itemPrice);
     localStorage.setItem('name', itemName);
@@ -207,55 +232,55 @@ function checkout() {
 
 
 
-//cart
-var itemCount = 0;
-var priceTotal = 0;
+// //cart
+// var itemCount = 0;
+// var priceTotal = 0;
 
-// Add Item to Cart
-$('.add').click(function () {
-    itemCount++;
+// // Add Item to Cart
+// $('.add').click(function () {
+//     itemCount++;
 
-    $('#itemCount').text(itemCount).css('display', 'block');
-    $(this).siblings().clone().appendTo('#cartItems').append('<button class="removeItem">Remove Item</button>');
+//     $('#itemCount').text(itemCount).css('display', 'block');
+//     $(this).siblings().clone().appendTo('#cartItems').append('<button class="removeItem">Remove Item</button>');
 
-    // Calculate Total Price
-    var price = parseInt($(this).siblings().find('.price').text());
-    priceTotal += price;
-    $('#cartTotal').text("Total: €" + priceTotal);
-});
-
-
-
-// Hide and Show Cart Items
-$('.openCloseCart').click(function () {
-    $('#shoppingCart').toggle();
-});
-
-
-// Empty Cart
-$('#emptyCart').click(function () {
-    itemCount = 0;
-    priceTotal = 0;
-
-    $('#itemCount').css('display', 'none');
-    $('#cartItems').text('');
-    $('#cartTotal').text("Total: €" + priceTotal);
-});
+//     // Calculate Total Price
+//     var price = parseInt($(this).siblings().find('.price').text());
+//     priceTotal += price;
+//     $('#cartTotal').text("Total: €" + priceTotal);
+// });
 
 
 
-// Remove Item From Cart
-$('#shoppingCart').on('click', '.removeItem', function () {
-    $(this).parent().remove();
-    itemCount--;
-    $('#itemCount').text(itemCount);
+// // Hide and Show Cart Items
+// $('.openCloseCart').click(function () {
+//     $('#shoppingCart').toggle();
+// });
 
-    // Remove Cost of Deleted Item from Total Price
-    var price = parseInt($(this).siblings().find('.price').text());
-    priceTotal -= price;
-    $('#cartTotal').text("Total: €" + priceTotal);
 
-    if (itemCount == 0) {
-        $('#itemCount').css('display', 'none');
-    }
-});
+// // Empty Cart
+// $('#emptyCart').click(function () {
+//     itemCount = 0;
+//     priceTotal = 0;
+
+//     $('#itemCount').css('display', 'none');
+//     $('#cartItems').text('');
+//     $('#cartTotal').text("Total: €" + priceTotal);
+// });
+
+
+
+// // Remove Item From Cart
+// $('#shoppingCart').on('click', '.removeItem', function () {
+//     $(this).parent().remove();
+//     itemCount--;
+//     $('#itemCount').text(itemCount);
+
+//     // Remove Cost of Deleted Item from Total Price
+//     var price = parseInt($(this).siblings().find('.price').text());
+//     priceTotal -= price;
+//     $('#cartTotal').text("Total: €" + priceTotal);
+
+//     if (itemCount == 0) {
+//         $('#itemCount').css('display', 'none');
+//     }
+// });

@@ -4,7 +4,7 @@ html {
 .nav-link {
     font-size: 12px;
 }
-.navbar p {
+.navbar p, .dropdown-item {
     font-size: 12px;
 }
 .product p {
