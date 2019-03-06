@@ -170,10 +170,46 @@ function addToDetails() {
 
 };
 
+$("#addtocart").on('click', function (event) {
+    event.preventDefault();
+    var itemPrice = document.querySelector('#details .price').innerHTML;
+    console.log(itemPrice);
+    var itemName = document.querySelector('#details .product-name').innerHTML;
+    localStorage.setItem('price', itemPrice);
+    localStorage.setItem('name', itemName);
+    document.querySelector("#cart .price").innerHTML = localStorage.getItem("price");
+});
+
+
+function checkout() {
+    document.querySelector('#checkout .name').innerHTML = localStorage.getItem("name");
+    document.querySelector('#checkout .price').innerHTML = localStorage.getItem("price");
+    // document.querySelector('#checkout .total').innerHTML = localStorage.getItem("price");
+    // document.querySelector('#sum .sub-total').innerHTML = localStorage.getItem("price");
+    // document.querySelector('#sum .total').innerHTML = localStorage.getItem("price");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //cart
 var itemCount = 0;
 var priceTotal = 0;
-
 
 // Add Item to Cart
 $('.add').click(function () {

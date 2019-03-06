@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="styles.css" type="text/css" />
     </head>
 
-<body>
+<body onload="checkout()">
     <header>
         <nav class="navbar clearfix">
             <a class="navbar-brand float-left" href="#">
@@ -30,7 +30,7 @@
                     <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
                 </form>
                 <a class="nav-link text-dark" href="#"><i class="fa fa-user-circle nav-item text-dark mr-1"></i>Account</a>
-                <a class="nav-link text-dark" href="cart.html"><i class="fa fa-shopping-cart nav-item text-dark mr-1"></i>Cart</a>
+                <a class="nav-link text-dark" id="cart.html" href="cart.html"><i class="fa fa-shopping-cart nav-item text-dark mr-1"></i>Cart</a>
         </nav>
         </div>
         <div class="container ml-5">
@@ -62,16 +62,17 @@
                             </ul>
                         </div>
                         <div class="divider"></div>
-                        <img src="" alt="">
-                        <h2>Name</h2>
-                        <p>Product</p>
-                        <p>Price</p>
-                    </div>
-                    <div class="order-summary col-4">
-                        <h2>Order Summary</h2>
-                        <p>Total</p>
-                        <button>Checkout</button>
-                    </div>
+                        <div id="checkout">
+                            <img src="" alt="">
+                            <div class="name">Hello</div>
+                            <div class="price">Hi</div>
+                            </div>
+                            <div class="order-summary col-4">
+                                <h2>Order Summary</h2>
+                                <p>Total</p>
+                                <button>Checkout</button>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
