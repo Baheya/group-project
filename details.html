@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="styles.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="Details.css" />
     </head>
-    <body>
+    <body onload="addToDetails()">
             <header>
                     <nav class="navbar">
                         <a class="navbar-brand" href="#">
@@ -41,40 +41,46 @@
                     </div>
                 </header>
             <section>
-                <main  class="container" >
+                <main  class="container" id="details" >
                         
-                                    <div class="mx-auto" style="width: 200px>
-                                        <div class="picture">
-                                            <img src="https://images-na.ssl-images-amazon.com/images/I/710H4c%2BmDeL.jpg" alt="#">
-                                        </div>
-                                            <div class="row">
-                                                    <div class="col">
-                                                        <p>The Little Prince</p>
-                                                    </div>
-                                                    <div class="col">
-                                                        <p>Book</p>
-                                                    </div>
-                                                    <div class="col">
-                                                        <p>100 L.E.</p>
-                                                    </div>
-                                            </div>
+                    <div class="mx-auto">
+                            <img class="picture_url" src="" alt="#">
+                            <div class="row">
+                                    <div class="col product-name">
+                                        <p></p>
                                     </div>
-                                    <div class="w-100"></div>
+                                    <div class="col category">
+                                        <p></p>
+                                    </div>
+                                    <div class="col price">
+                                        <p></p>
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="w-100"></div>
 
-                                    <div class="row">
-                                        <div class="col-8">
-                                                <p>Though the prince is sociable and meets a number of characters as he travels, he never stops loving and missing the rose on his home planet. Read an in-depth analysis of The Little Prince. The Narrator - A lonely pilot who, while stranded in the desert, befriends the little prince. Source: Sparknotes</p>
-                                            </div>
-                                            <div class="col-4">
-                                                <button type="button" onclick="window.location.href= 'Cart Page.html';"> Add to Cart</button><i class="fas fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                                <p></p>
+                            </div>
+                            <div class="col-4">
+                                <button type="button"> Add to Cart</button><i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
                         
                     </main>
             </section>
-            <footer>
-               
-            </footer>
+                <footer>
+                
+                </footer>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+            <script src="script.js"></script>
     </body>
 </html>

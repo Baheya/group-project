@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Cart</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+    </head>
+
+<body>
+    <header>
+        <nav class="navbar clearfix">
+            <a class="navbar-brand float-left" href="#">
+                <i class="fab fa-angrycreative text-dark float-left"></i>
+            </a>
+            <ul class="nav mx-auto">
+                <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Products</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
+            </ul>
+            <div class="nav float-right">
+                <form class="form-inline nav-item">
+                    <input class="form-control mr-sm-2 form-control-sm" id="search-bar" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                </form>
+                <a class="nav-link text-dark" href="#"><i class="fa fa-user-circle nav-item text-dark mr-1"></i>Account</a>
+                <a class="nav-link text-dark" href="cart.html"><i class="fa fa-shopping-cart nav-item text-dark mr-1"></i>Cart</a>
+        </nav>
+        </div>
+        <div class="container ml-5">
+            <form>
+                <div class="form-row">
+                    <div class="col-auto my-1">
+                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <option value="categ" selected="true">Choose...</option>
+                        </select>
+                    </div>
+                    <div class="col-auto my-1">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <!-- <div class="row my-5" id="content"></div> -->
+            <h1>Shopping Cart</h1>
+            <div class="cart-content container">
+                <div class="row">
+                    <div class="cart-items col-8 divider">
+                        <div class="row">
+                                <p class="col-8">Item</p>
+                                <p class="col-4">Item Price</p>
+                            </ul>
+                        </div>
+                        <div class="divider"></div>
+                        <img src="" alt="">
+                        <h2>Name</h2>
+                        <p>Product</p>
+                        <p>Price</p>
+                    </div>
+                    <div class="order-summary col-4">
+                        <h2>Order Summary</h2>
+                        <p>Total</p>
+                        <button>Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer font-small indigo">
+
+        <div class="container text-center text-md-left">
+
+
+            <div class="row">
+
+
+                <div class="col-md-3 mx-auto">
+
+
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">shop </h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!"> shop movie</a>
+                        </li>
+                        <li>
+                            <a href="#!">shop album</a>
+                        </li>
+                        <li>
+                            <a href="#!">shop books</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <hr class="clearfix w-100 d-md-none">
+
+
+                <div class="col-md-3 mx-auto">
+
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4"> customer service </h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!"> About us </a>
+                        </li>
+                        <li>
+                            <a href="#!"> shipping and returns </a>
+                        </li>
+                        <li>
+                            <a href="#!"> FAQ </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <hr class="clearfix w-100 d-md-none">
+
+
+                <div class="col-md-3 mx-auto">
+
+
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4"> reach us </h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!"> Facebook </a>
+                        </li>
+                        <li>
+                            <a href="#!"> instgram </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <hr class="clearfix w-100 d-md-none">
+
+
+            </div>
+
+            <footer class="page-footer font-small special-color-dark pt-4">
+
+
+                <div class="container">
+
+
+                    <div class="row">
+
+
+                        <div class="col-md-6 mb-4">
+
+
+                            <form class="form-inline">
+                                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                                    aria-label="Search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </form>
+
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <form class="input-group">
+                                <input type="text" class="form-control form-control-sm" placeholder="Your email"
+                                    aria-label="Your email" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-sm btn-outline-white my-0" type="button">Sign in</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+        </div>
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+        </div>
+
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

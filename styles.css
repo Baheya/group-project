@@ -23,9 +23,6 @@ img {
     width: 300px;
     object-fit: cover;
 }
-footer { 
-    
-    background-color:  #FFFF33;
-
-
+.divider {
+    border-top: 1px solid #ddd;
 }

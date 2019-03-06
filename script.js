@@ -95,47 +95,7 @@ $('#inlineFormCustomSelect').on('change', function (event) {
     }
 });
 
-// document.getElementById('search-bar').addEventListener('keyup', function (e) {
-//     e.preventDefault();
-//     // var arr = Object.entries(products);
-//     var searchBar = document.forms["search-bar"].querySelector("input");
-//     var userInput = searchBar.value.toLowerCase();
-//     // below code return the value of the option user selected from the 
-//     // drop-down menu
-//     var optionSelect = document.getElementById('user-select');
-//     var userOption = optionSelect.value;
-//     var searchFoundReturn;
-//     if (userOption === "categ") {
-//         for (var i = 0; i <= Object.entries(products)[i].length; i++) {
-//             for (var j = 0; j < Object.entries(products)[i][1].length; j++) {
-//                 if (userInput === Object.entries(products)[i][1][j].name) {
-//                     $(".books").hide();
-//                     $(".movies").hide();
-//                     $(".albums").hide();
-//                     searchFoundReturn = Object.entries(products)[i][1][j].id;
-//                     $("#" + searchFoundReturn).show();
-//                 }
-//             }
-//         }
-//     }
-//     else {
-//         for (var x = 0; x <= Object.keys(products).length; x++) {
-//             if (userOption == Object.keys(products)[x]) {
-//                 for (var k = 0; k < Object.entries(products)[x][1].length; k++) {
-//                     if (userInput === Object.entries(products)[x][1][k].name) {
-//                         $(".books").hide();
-//                         $(".movies").hide();
-//                         $(".albums").hide();
-//                         searchFoundReturn = Object.entries(products)[x][1][k].id;
-//                         $("#" + searchFoundReturn).show();
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// });
-
-
+//adding products to the page
 $(window).on('load', function () {
     addToPage();
 });
@@ -170,23 +130,6 @@ function addToPage() {
     }
 }
 
-
-// //store all objects in an array
-// var bookArray = [book1, book2, book3];
-// var movieArray = [movie1, movie2, movie3];
-// var albumArray = [album1, album2, album3];
-
-// code for adding object keys and values with their respective divs. So far I am only able to append the outermost div with a nested div (class=picture, with img tag nested inside the div) inside it. 
-// function add_to_page(x) {
-//     $('#content').append($("<div id=" + x.id + " class=" + x.category + ">").html($('<div class=picture>').html($('<img />').attr('src', x.picture_url))));
-    // $('#content').append($('<div class=name></div>').text(x.name));
-    // $('#book-1').append($('<div class=category></div>').text(x.category));
-    // $('#book-1').append($('<div class=price></div>').text(x.price));
-// };
-// add_to_page(book1);
-
-
-
 //code for search:
 $(document).ready(function () {
 
@@ -204,4 +147,79 @@ $("#search-bar").on("keyup", function () {
         }
     })
 })
+});
+
+
+//details page 
+
+function addToDetails() {
+    var querystring = window.location.search.substring(1);
+    var equalIndex = querystring.indexOf('=');
+    var idValue = querystring.slice(equalIndex + 1);
+    var arr = Object.entries(products);
+    for (var j = 0; j < Object.keys(products).length; j++) {
+        for (var i = 0; i < Object.entries(products)[j][1].length; i++) {
+            if (idValue === arr[j][1][i].id) {
+                $('#details .product-name').text(arr[j][1][i].name);
+                $('#details .category').text(arr[j][1][i].category);
+                $('#details .price').text(arr[j][1][i].price);
+                $('#details .picture_url').attr('src', arr[j][1][i].picture_url);
+            }
+        }
+    }
+
+};
+
+//cart
+var itemCount = 0;
+var priceTotal = 0;
+
+
+// Add Item to Cart
+$('.add').click(function () {
+    itemCount++;
+
+    $('#itemCount').text(itemCount).css('display', 'block');
+    $(this).siblings().clone().appendTo('#cartItems').append('<button class="removeItem">Remove Item</button>');
+
+    // Calculate Total Price
+    var price = parseInt($(this).siblings().find('.price').text());
+    priceTotal += price;
+    $('#cartTotal').text("Total: €" + priceTotal);
+});
+
+
+
+// Hide and Show Cart Items
+$('.openCloseCart').click(function () {
+    $('#shoppingCart').toggle();
+});
+
+
+// Empty Cart
+$('#emptyCart').click(function () {
+    itemCount = 0;
+    priceTotal = 0;
+
+    $('#itemCount').css('display', 'none');
+    $('#cartItems').text('');
+    $('#cartTotal').text("Total: €" + priceTotal);
+});
+
+
+
+// Remove Item From Cart
+$('#shoppingCart').on('click', '.removeItem', function () {
+    $(this).parent().remove();
+    itemCount--;
+    $('#itemCount').text(itemCount);
+
+    // Remove Cost of Deleted Item from Total Price
+    var price = parseInt($(this).siblings().find('.price').text());
+    priceTotal -= price;
+    $('#cartTotal').text("Total: €" + priceTotal);
+
+    if (itemCount == 0) {
+        $('#itemCount').css('display', 'none');
+    }
 });
