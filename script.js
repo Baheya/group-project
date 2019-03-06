@@ -73,11 +73,11 @@ var products = {
 $('#inlineFormCustomSelect').on('change', function (event) {
     event.preventDefault();
     var userSelectOption = event.target.value;
-    // if (userSelectOption === "categ") {
-    //     $(".books").show();
-    //     $(".movies").show();
-    //     $(".albums").show();
-    // }
+    if (userSelectOption === "categ") {
+        $(".books").show();
+        $(".movies").show();
+        $(".albums").show();
+    }
     if (userSelectOption === "books") {
         $(".books").show();
         $(".movies").hide();
@@ -94,6 +94,47 @@ $('#inlineFormCustomSelect').on('change', function (event) {
         $(".books").hide();
     }
 });
+
+// document.getElementById('search-bar').addEventListener('keyup', function (e) {
+//     e.preventDefault();
+//     // var arr = Object.entries(products);
+//     var searchBar = document.forms["search-bar"].querySelector("input");
+//     var userInput = searchBar.value.toLowerCase();
+//     // below code return the value of the option user selected from the 
+//     // drop-down menu
+//     var optionSelect = document.getElementById('user-select');
+//     var userOption = optionSelect.value;
+//     var searchFoundReturn;
+//     if (userOption === "categ") {
+//         for (var i = 0; i <= Object.entries(products)[i].length; i++) {
+//             for (var j = 0; j < Object.entries(products)[i][1].length; j++) {
+//                 if (userInput === Object.entries(products)[i][1][j].name) {
+//                     $(".books").hide();
+//                     $(".movies").hide();
+//                     $(".albums").hide();
+//                     searchFoundReturn = Object.entries(products)[i][1][j].id;
+//                     $("#" + searchFoundReturn).show();
+//                 }
+//             }
+//         }
+//     }
+//     else {
+//         for (var x = 0; x <= Object.keys(products).length; x++) {
+//             if (userOption == Object.keys(products)[x]) {
+//                 for (var k = 0; k < Object.entries(products)[x][1].length; k++) {
+//                     if (userInput === Object.entries(products)[x][1][k].name) {
+//                         $(".books").hide();
+//                         $(".movies").hide();
+//                         $(".albums").hide();
+//                         searchFoundReturn = Object.entries(products)[x][1][k].id;
+//                         $("#" + searchFoundReturn).show();
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// });
+
 
 $(window).on('load', function () {
     addToPage();
@@ -147,16 +188,20 @@ function addToPage() {
 
 
 //code for search:
+$(document).ready(function () {
 
-$("#userInput").on("keyup", function () {
+$("#search-bar").on("keyup", function () {
     var searchInput = $(this).val().toLowerCase();
-    $(".product .name").each(function () {
+    $(".product .card-body .name").each(function () {
         var s = $(this).text().toLowerCase();
+        //s here refers to the titles of all products in each iteration
         if (s.indexOf(searchInput) != -1) {
-            $(this).parent().show();
+            console.log(this);
+            $(this).parent().parent().show();
         }
         else {
-            $(this).parent().hide();
+            $(this).parent().parent().hide();
         }
     })
+})
 });
