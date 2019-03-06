@@ -14,66 +14,85 @@
         <link rel="stylesheet" type="text/css" href="Details.css" />
     </head>
     <body onload="addToDetails()">
-            <header>
-                    <nav class="navbar">
-                        <a class="navbar-brand" href="#">
-                            <i class="fab fa-angrycreative text-dark"></i>
-                        </a>
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item"><a class="nav-link text-dark" href="#">Home</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" href="#">Products</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" href="#">About</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
-                        </ul>
-                        <div class="nav justify-content-end">
-                            <form class="form-inline nav-item">
-                                <input class="form-control mr-sm-2 form-control-sm" type="search" placeholder="Search" aria-label="Search">
-                                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                            </form>
-                            <a class="nav-link" href="#"><i class="fa fa-user-circle nav-item text-dark"></i></a>
-                            <a class="nav-link" id="cart" href="cart.html"><i class="fa fa-shopping-cart nav-item text-dark"></i><div class="badge price"></div></a>
-                            </nav>
+        <header>
+            <nav class="navbar">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fab fa-angrycreative text-dark"></i>
+                </a>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link text-dark" data-toggle="dropdown" href="index.html">Products</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="index.html">All Products</a>
+                            <a class="dropdown-item" href="index.html">Books</a>
+                            <a class="dropdown-item" href="index.html">Albums</a>
+                            <a class="dropdown-item" href="index.html">Movies</a>
                         </div>
-                    <div>
-                        <h1>
-                            Product Details
-                        </h1>
-                    </div>
-                </header>
-            <section>
-                <main  class="container" id="details" >
-                        
-                    <div class="mx-auto">
-                            <img class="picture_url" src="" alt="#">
-                            <div class="row">
-                                    <div class="col product-name">
-                                        <p></p>
-                                    </div>
-                                    <div class="col category">
-                                        <p></p>
-                                    </div>
-                                    <div class="col price">
-                                        <p></p>
-                                    </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
+                </ul>
+                <div class="nav justify-content-end">
+                    <form class="form-inline nav-item">
+                        <input class="form-control mr-sm-2 form-control-sm" id="search-bar" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                    </form>
+                    <a class="nav-link text-dark" href="#"><i class="fa fa-user-circle nav-item text-dark mr-1"></i>Account</a>
+                    <a class="nav-link text-dark" id="cart" href="cart.html"><i class="fa fa-shopping-cart nav-item text-dark mr-1"></i>Cart<div class="badge price"></div></a>
+                </div>
+            </nav>
+            <div class="container ml-5">
+                <!-- Form select filter to filter products by category
+                    <form>
+                            <div class="form-row">
+                                <div class="col-auto my-1">
+                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                        <option value="categ" selected="true">Choose...</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto my-1">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
                             </div>
-                    </div>
-                    <div class="w-100"></div>
+                        </form> -->
+            </div>
+        </header>
+        <section>
+            <main class="container mt-5" id="details" >
+                    
+                <div class="mx-auto">
+                        <img class="picture_url" src="" alt="#">
+                        <div class="row">
+                                <div class="col product-name">
+                                    <p></p>
+                                </div>
+                                <div class="col category">
+                                    <p></p>
+                                </div>
+                                <div class="col price">
+                                    <p></p>
+                                </div>
+                        </div>
+                </div>
+                <div class="w-100"></div>
 
-                    <div class="row">
-                        <div class="col-8">
-                                <p></p>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" id="addtocart"> Add to Cart</button><i class="fas fa-shopping-cart"></i>
-                            </div>
+                <div class="row">
+                    <div class="col-8">
+                            <p></p>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" id="addtocart"> Add to Cart</button><i class="fas fa-shopping-cart"></i>
                         </div>
                     </div>
-                        
-                    </main>
-            </section>
-                <footer>
-                
-                </footer>
+                </div>
+                    
+                </main>
+        </section>
+        <footer>
+        
+        </footer>
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>

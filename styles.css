@@ -17,6 +17,10 @@ html {
 }
 .navbar {
     border: solid 1px #ddd;
+    background-color: white;
+}
+.capitalize {
+    text-transform: capitalize;
 }
 img {
     height: 400px;

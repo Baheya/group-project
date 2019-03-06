@@ -71,6 +71,7 @@ var products = {
 };
 
 //product filtering from navbar dropdown menu item
+
 $('.dropdown-item').on('click', function (x) {
     if (x.target.innerHTML === "All Products") {
         $(".books").show();
@@ -136,12 +137,13 @@ function addToPage() {
         for (var i = 0; i < Object.entries(products)[j][1].length; i++) {
             var id = arr[j][1][i].category + [i + 1];
             var cardContent = '<div class="col-4">\
-								<div id="'+ i + '" class="card p-4 border-0 text-center product" style="width: 18rem;">\
+								<div id="'+ i + '" class="card p-4 border-0 product" style="width: 18rem;">\
 									<a href="details.html?id='+ id + '"><img class="card-img-top img"  alt="Card image cap"></a> \
-								  	<div class="card-body"> \
-									    <h5 class="card-title name"></h5> \
-									    <p class="card-text category"></p> \
-									    <a href="details.html?id='+ id + '" class="btn btn-primary price"></a> \
+								  	<div> \
+									    <h5 class="name"></h5> \
+                                        <p class="card-text category capitalize"></p> \
+                                        <p class="card-text price"></p> \
+									    <a href="details.html?id='+ id + '" class="btn btn-outline-dark btn-sm">Details</a> \
 								  	</div>\
 								</div>\
 							 </div>'
