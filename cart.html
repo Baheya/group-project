@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>Cart</title>
+        <title>My Cart</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
@@ -24,10 +24,10 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
                 <li class="nav-item dropdown"><a class="nav-link text-dark" data-toggle="dropdown" href="index.html">Products</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">All Products</a>
-                        <a class="dropdown-item" href="#">Books</a>
-                        <a class="dropdown-item" href="#">Albums</a>
-                        <a class="dropdown-item" href="#">Movies</a>
+                        <a class="dropdown-item" href="index.html">All Products</a>
+                        <a class="dropdown-item" href="index.html">Books</a>
+                        <a class="dropdown-item" href="index.html">Albums</a>
+                        <a class="dropdown-item" href="index.html">Movies</a>
                     </div>
                 </li>
                 <li class="nav-item"><a class="nav-link text-dark" href="#">About</a></li>
@@ -62,27 +62,36 @@
     <main>
         <div class="container my-5">
             <!-- <div class="row my-5" id="content"></div> -->
-            <h1>Shopping Cart</h1>
             <div class="cart-content container">
                 <div class="row">
-                    <div class="cart-items col-8 divider">
+                    <div class="cart-items col-8">
+                        <h2>Shopping Cart</h2>
+                        <div class="divider"></div>
                         <div class="row">
-                                <p class="col-8">Item</p>
+                                <p class="col-8 pl-5">Item</p>
                                 <p class="col-4">Item Price</p>
                             </ul>
                         </div>
                         <div class="divider"></div>
-                        <div id="checkout">
-                            <img class="picture_url" src="" alt="">
-                            <div class="name">Hello</div>
-                            <div class="price">Hi</div>
-                            </div>
-                            <div class="order-summary col-4">
-                                <h2>Order Summary</h2>
-                                <p>Total</p>
-                                <button>Checkout</button>
+                        <div id="checkout" class="container">
+                            <div class="row">
+                                <div class="col-8 p-4">
+                                    <img class="picture_url thumb mt-3" src="" alt="">
+                                    <div class="name"></div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="price pt-5"></div>
+                                </div>
                             </div>
                         </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="order-summary col-4">
+                        <h2>Order Summary</h2>
+                        <div class="divider"></div>
+                        <p>Total: <span><p class="total"></p></span></p>
+                        <button class="btn btn-sm btn-outline-dark">Checkout</button>
+                    </div>
                 </div>
             </div>
         </div>

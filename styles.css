@@ -12,6 +12,9 @@ html {
     margin: 0;
     padding: 0;
 }
+.product-name, .category, .price, .description {
+    font-size: 12px;
+}
 .fa-angrycreative {
     font-size: 36px;
 }
@@ -25,10 +28,22 @@ html {
 #content {
     padding-top: 50px;
 }
+.cart-content p {
+    font-size: 12px;
+    padding: 5px;
+    margin: 0;
+}
 img {
     height: 400px;
     width: 300px;
     object-fit: cover;
+}
+.thumb {
+    width: 50px;
+    height: auto;
+}
+#details .row {
+    flex-wrap: nowrap;
 }
 .divider {
     border-top: 1px solid #ddd;

@@ -5,21 +5,24 @@ var products = {
         "category": "books",
         "price": "100 L.E.",
         "picture_url": "https://images-na.ssl-images-amazon.com/images/I/710H4c%2BmDeL.jpg",
-        "id": "books1"
+        "id": "books1",
+        "description": "The Little Prince, French Le Petit Prince, fable and modern classic by French aviator and writer Antoine de Saint-Exupéry that was published with his own illustrations in French as Le Petit Prince in 1943. The simple tale tells the story of a child, the little prince, who travels the universe gaining wisdom. The novella has been translated into hundreds of languages and has sold some 200 million copies worldwide, making it one of the best-selling books in publishing history."
     },
             {
         "name": "The City Always Wins",
         "category": "books",
         "price": "250 LE",
         "picture_url": "https://www.easons.com/globalassets/5637150827/all/books/fiction/fiction-a-to-z/contemporary-fiction/9780571335176.jpg",
-        "id": "books2"
+        "id": "books2",
+        "description": "The City Always Wins is a novel from the front line of a revolution. Deeply enmeshed in the 2011 uprising in Tahrir Square, Mariam and Khalil move through Cairo’s surging streets and roiling political underground, their lives burning with purpose, their city alive in open revolt, the world watching, listening, as they chart a course into an unknown future. They are―they believe―fighting a new kind of revolution; they are players in a new epic in the making."
     },
             {
         "name": "The Map of Love",
         "category": "books",
         "price": "100 LE",
         "picture_url": "https://images-na.ssl-images-amazon.com/images/I/71Zh1DdRD9L.jpg",
-        "id": "books3"
+        "id": "books3",
+        "description": "At either end of the twentieth century, two women fall in love with men outside their familiar worlds. In 1901, Anna Winterbourne, recently widowed, leaves England for Egypt, an outpost of the Empire roiling with nationalist sentiment. Far from the comfort of the British colony, she finds herself enraptured by the real Egypt and in love with Sharif Pasha al-Baroudi. Nearly a hundred years later, Isabel Parkman, a divorced American journalist and descendant of Anna and Sharif has fallen in love with Omar al-Ghamrawi, a gifted and difficult Egyptian-American conductor with his own passionate politics. In an attempt to understand her conflicting emotions and to discover the truth behind her heritage, Isabel, too, travels to Egypt, and enlists Omar's sister's help in unravelling the story of Anna and Sharif's love."
     },
 ],
     "movies": [
@@ -28,21 +31,24 @@ var products = {
         "category": "movies",
         "price": "200 LE",
         "picture_url": "https://m.media-amazon.com/images/M/MV5BMGU3NGYyYTYtYjIzMS00ZmUwLTlmMjAtZDhhMzFiNWI0NzNkXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg",
-        "id": "movies1"
+        "id": "movies1",
+        "description": "Jake Peralta, an immature, but talented N.Y.P.D. detective in Brooklyn's 99th Precinct, comes into immediate conflict with his new commanding officer, the serious and stern Captain Ray Holt."
     },
             {
         "name": "La Casa De Papel",
         "category": "movies",
         "price": "150 LE",
         "picture_url": "https://i.ebayimg.com/images/i/163093272041-0-1/s-l1000.jpg",
-        "id": "movies2"
+        "id": "movies2",
+        "description": "A group of very peculiar robbers assault the Factory of Moneda and Timbre to carry out the most perfect robbery in the history of Spain and take home 2.4 billion euros."
     },
             {
         "name": "The Good Place",
         "category": "movies",
         "price": "200 LE",
         "picture_url": "https://images-na.ssl-images-amazon.com/images/I/91DHcyLCfaL._SL1500_.jpg",
-        "id": "movies3"
+        "id": "movies3",
+        "description": "Four people and their otherworldly frienemy struggle in the afterlife to define what it means to be good."
     },
 ],
     "albums": [
@@ -51,21 +57,24 @@ var products = {
         "category": "albums",
         "price": "300 LE",
         "picture_url": "https://cdn.shopify.com/s/files/1/2171/7009/products/dontsmile-vinyl_grande.png?v=1532122195",
-        "id": "albums1"
+        "id": "albums1",
+        "description": "Don't Smile at Me (stylized as dont smile at me) is the debut extended play by American singer and songwriter Billie Eilish. It was released on August 11, 2017 through Interscope Records, and contains several of her previously released singles, including 'Ocean Eyes', 'Bellyache', 'Watch' and 'idontwannabeyouanymore'. The track 'My Boy' was used in the fourth episode of the third season of the American television series Shadowhunters."
     },
             {
         "name": "Solstice",
         "category": "albums",
         "price": "250 LE",
         "picture_url": "https://sidekick-music.com/wp-content/uploads/2018/09/Down.jpg",
-        "id": "albums2"
+        "id": "albums2",
+        "description": "With over 20 Million streams on spotify and a successful debut album, Justine Rousseau and Benjamin Cholet (Napkey) are back with a retro-futuristic electro-pop record documenting the journey of the young robot ‘SOL’, as he endeavours to find the complete understanding of being human."
     },
             {
-        "name": "Tame Impala",
+        "name": "Currents",
         "category": "albums",
         "price": "100 LE",
         "picture_url": "https://dx72k0ec4onep.cloudfront.net/product/1616/28332732/8WQFMW-1478305742-1280x1280-602547394897.jpg",
-        "id": "albums3"
+        "id": "albums3",
+        "description": "Currents is the third studio album by Australian rock band Tame Impala, released on 17 July 2015 by Modular Recordings through Universal Music Australia in Australia, Fiction Records in Europe and Interscope Records in the United States. Like the group's previous two albums, Currents was written, recorded, performed, and produced by primary member Kevin Parker. For the first time, Parker also mixed the music. It was also the first time that Parker recorded all instruments by himself; the album featured no other collaborators."
     }
 ]
 };
@@ -127,7 +136,7 @@ $(window).on('load', function () {
     addToPage();
 });
 function addToPage() {
-    // document.querySelector("#cart .price").innerHTML = localStorage.getItem("price");
+    document.querySelector("#cart .price").innerHTML = localStorage.getItem("price");
     // for (var keys in products) {
     //     var appendToDropDown = '<a  href="" class="dropdown-item ' + keys + '">' + keys + '</a>';
     //     $(".dropdown-menu").append(appendToDropDown);
@@ -193,6 +202,7 @@ function addToDetails() {
                 $('#details .category').text(arr[j][1][i].category);
                 $('#details .price').text(arr[j][1][i].price);
                 $('#details .picture_url').attr('src', arr[j][1][i].picture_url);
+                $('#details .description').text(arr[j][1][i].description);
             }
         }
     }
@@ -203,19 +213,19 @@ $("#addtocart").on('click', function (event) {
     event.preventDefault();
     var itemPrice = document.querySelector('#details .price').innerHTML;
     var itemName = document.querySelector('#details .product-name').innerHTML;
-    var itemPicture = document.querySelector('#details .picture_url').innerHTML;
+    var imageSource = document.querySelector('#details .picture_url').src;
     localStorage.setItem('price', itemPrice);
     localStorage.setItem('name', itemName);
-    localStorage.setItem('src', itemPicture);
+    localStorage.setItem('picture_url', imageSource);
     document.querySelector("#cart .price").innerHTML = localStorage.getItem("price");
 });
 
 
 function checkout() {
-    document.querySelector('#checkout .picture_url').attr = localStorage.getItem("picture_url");
+    document.querySelector('#checkout .picture_url').src = localStorage.getItem("picture_url");
     document.querySelector('#checkout .name').innerHTML = localStorage.getItem("name");
     document.querySelector('#checkout .price').innerHTML = localStorage.getItem("price");
-    // document.querySelector('#checkout .total').innerHTML = localStorage.getItem("price");
+    document.querySelector('.order-summary .total').innerHTML = localStorage.getItem("price");
     // document.querySelector('#sum .sub-total').innerHTML = localStorage.getItem("price");
     // document.querySelector('#sum .total').innerHTML = localStorage.getItem("price");
 }
