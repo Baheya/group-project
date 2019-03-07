@@ -4,7 +4,7 @@ html {
 .nav-link {
     font-size: 12px;
 }
-.navbar p, .dropdown-item {
+.navbar p, .dropdown-item, footer {
     font-size: 12px;
 }
 .product p {
@@ -15,12 +15,15 @@ html {
 .fa-angrycreative {
     font-size: 36px;
 }
-.navbar {
+.navbar, footer {
     border: solid 1px #ddd;
     background-color: white;
 }
 .capitalize {
     text-transform: capitalize;
+}
+#content {
+    padding-top: 50px;
 }
 img {
     height: 400px;

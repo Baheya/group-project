@@ -163,8 +163,9 @@ $(document).ready(function () {
 
 $("#search-bar").on("keyup", function () {
     var searchInput = $(this).val().toLowerCase();
-    $(".product .card-body .name").each(function () {
+    $(".product .name").each(function () {
         var s = $(this).text().toLowerCase();
+        console.log(s);
         //s here refers to the titles of all products in each iteration
         if (s.indexOf(searchInput) != -1) {
             console.log(this);
@@ -202,13 +203,16 @@ $("#addtocart").on('click', function (event) {
     event.preventDefault();
     var itemPrice = document.querySelector('#details .price').innerHTML;
     var itemName = document.querySelector('#details .product-name').innerHTML;
+    var itemPicture = document.querySelector('#details .picture_url').innerHTML;
     localStorage.setItem('price', itemPrice);
     localStorage.setItem('name', itemName);
+    localStorage.setItem('src', itemPicture);
     document.querySelector("#cart .price").innerHTML = localStorage.getItem("price");
 });
 
 
 function checkout() {
+    document.querySelector('#checkout .picture_url').attr = localStorage.getItem("picture_url");
     document.querySelector('#checkout .name').innerHTML = localStorage.getItem("name");
     document.querySelector('#checkout .price').innerHTML = localStorage.getItem("price");
     // document.querySelector('#checkout .total').innerHTML = localStorage.getItem("price");
